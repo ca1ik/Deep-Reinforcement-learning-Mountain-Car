@@ -1,4 +1,4 @@
-    import gym
+    import gym # solve gym pip
     import tensorflow as tf
     import keras
     from tensorflow.keras import models
