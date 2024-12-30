@@ -8,7 +8,7 @@
     import random
     import numpy as np
 
-    gpus = tf.config.list_physical_devices('GPU')
+    gpus = tf.config.list_physical_devices('GPU') # will edit for CPU , add app/option for CPU/GPU selection
     if gpus:
         try:
             # GPU configuration
