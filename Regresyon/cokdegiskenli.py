@@ -1,9 +1,9 @@
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import MinMaxScaler  # MinMaxScaler'ı buradan import ediyoruz
-from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler
+import matplotlib.pyplot as plt
 
-# Çok değişkenli veri tanımlama (örnek veri veya dosyadan okuma)
+# Çok değişkenli veri tanımlama
 data = """
 X1,X2,X3,Y
 6.1101,3.2,1.1,17.592
@@ -42,3 +42,13 @@ def gradient_descent_multi(X, y, learning_rate=0.01, epochs=1000):
 # Modeli eğit
 theta = gradient_descent_multi(X_bias, y)
 print(f"Model Parametreleri (Theta): {theta}")
+
+# Tahmin ve analiz
+predictions = X_bias.dot(theta)
+plt.scatter(range(len(y)), y, label='Gerçek Değerler', color='blue')
+plt.plot(range(len(predictions)), predictions, label='Tahmin', color='red')
+plt.xlabel('Veri Noktaları')
+plt.ylabel('Y (Bağımlı Değişken)')
+plt.legend()
+plt.title('Çok Değişkenli Regresyon Analizi')
+plt.show()
