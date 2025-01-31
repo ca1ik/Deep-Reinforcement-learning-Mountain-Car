@@ -7,6 +7,7 @@
     from collections import deque
     import random
     import numpy as np
+    import plt
 
     gpus = tf.config.list_physical_devices('GPU') # will edit for CPU , add app/option for CPU/GPU selection
     if gpus:
